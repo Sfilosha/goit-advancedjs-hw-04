@@ -4,20 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>CRUD & API</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./main.js" defer></script>
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <section class="container">
+      <form class="form">
+        <label>
+          <input
+            class="input"
+            type="text"
+            name="search-query"
+            placeholder="Search an image..."
+        /></label>
+        <button class="btn-primary" type="submit" data-search>Search</button>
+      </form>
+      <div>
+        <ul class="gallery js-gallery"></ul>
+      </div>
+      <button class="btn-secondary js-load-more" type="button" hidden>
+        Load more
+      </button>
+      <div class="loader" hidden></div>
+    </section>
   </body>
 </html>

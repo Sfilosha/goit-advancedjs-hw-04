@@ -8,11 +8,183 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
-@import url('./animations.css');
 
 /* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #000;
+  animation: prixClipFix 10s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%,
+      0 0,
+      100% 0,
+      100% 0,
+      100% 0,
+      100% 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
+
+/* ELEMENTS CSS */
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  width: 272px;
+  padding: 8px 16px;
+  outline: 1px solid;
+  outline-color: rgba(128, 128, 128, 1);
+  border-radius: 4px;
+
+}
+
+.input::placeholder {
+  color: rgba(128, 128, 128, 1);
+}
+
+.btn-primary {
+  padding: 8px 16px;
+  border-radius: 8px;
+
+  color: white;
+  background-color: rgba(78, 117, 255, 1);
+
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+}
+
+.btn-primary:hover {
+  background-color: rgb(58, 90, 208);
+}
+
+/* Gallery */
+
+.gallery-item {
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 1);
+  
+}
+
+.gallery-item-content {
+}
+
+.card-porperties {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.property-el {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.property-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: rgba(46, 47, 66, 1);
+}
+
+.property-text {
+
+    font-size: 12px;
+    line-height: 24px;;
+    color: rgba(46, 47, 66, 1);
+
+}
+
+.gallery-image {
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.loader {
+  margin: 0 auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.js-gallery {}
+
+.btn-secondary {
+  margin: 0 auto;
+  width: 200px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  
+    color: rgba(78, 117, 255, 1);
+    border: 1px solid rgba(78, 117, 255, 1);
+    background-color: white;
+  
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+}
+
+.btn-secondary:hover {
+  color: rgb(28, 58, 170);
+    border-color: rgb(28, 58, 170);
+}
