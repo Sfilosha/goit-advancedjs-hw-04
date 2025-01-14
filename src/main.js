@@ -56,6 +56,7 @@ const submitQuery = formElement.addEventListener("submit", event => {
     // Setting defaults
     page = 1;
     galleryEl.innerHTML = '';
+    btnLoadMore.setAttribute('hidden', '')
     preloaderElement.removeAttribute('hidden')
 
     getImages(searchQuery, page)
